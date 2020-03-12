@@ -29,7 +29,11 @@ deploy
 - 브라우저 가동
 - 15.165.160.241 접속
 - 접속로그 확인 (리눅스에서 진행)
-- $ tail -f/var/apache2/access.log
+- $ tail -f /var/log/apache2/access.log
+- 모니터링 하다가 
+- 빠져 나가기 => ctrl + C
+- 에러로그 
+- $ tail -f /var/log/apache2/error.log
 
 # 수정 시 
 - deploy 폴더로 가서
@@ -53,3 +57,9 @@ deploy
     $ rm -r -f .virtualenvs
 - 로컬 PC
     $ Fab new_server
+
+# 가상 호스트가 설정된 부분
+- deploy는 프로젝트명(deploy.json)
+- /etc/apache2/sites-available/deploy.conf 
+- 파일 읽기 
+    $ cat /etc/apache2/sites-available/deploy.conf 
